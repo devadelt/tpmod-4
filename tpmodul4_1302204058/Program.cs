@@ -12,6 +12,8 @@ namespace TPMOD4_1302204058
         {
             String nama = "Deva";
             HaloGeneric.SapaUser<string>(ref nama);
+            DataGeneric<string> dataGeneric = new DataGeneric<string>("1302204058");
+            dataGeneric.PrintData();
         }
     }
 
@@ -20,6 +22,21 @@ namespace TPMOD4_1302204058
         public static void SapaUser<T>(ref T nama)
         {
             Console.WriteLine("Halo user " + nama);
+        }
+    }
+
+    public class DataGeneric<T>
+    {
+        private T Data;
+
+        public DataGeneric(T Data)
+        {
+            this.Data = Data;
+        }
+
+        public void PrintData()
+        {
+            Console.WriteLine("Data yang tersimpan adalah: " + Data);
         }
     }
 }
